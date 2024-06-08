@@ -28,14 +28,14 @@ Karina Sudnicina
 SEP-ansible/lib/ansible/playbook/conditional.py:
 def evaluate_conditional_with_result(self, templar: Templar, all_vars: dict[str, t.Any])
 
-https://github.com/ansible/ansible/pull/83401/files
+[https://github.com/ansible/ansible/pull/83401/files](https://github.com/careena/SEP-ansible/pull/2/files)
 
 ![image](https://github.com/careena/SEP-ansible/assets/76873802/89ea6bae-34cf-46e7-9e9f-3682bb5c50bc)
 
 SEP-ansible/lib/ansible/playbook/block.py:
 def get_dep_chain(self):
 
-https://github.com/ansible/ansible/pull/83401/files
+[https://github.com/ansible/ansible/pull/83401/files](https://github.com/careena/SEP-ansible/pull/2/files)
 
 ![image](https://github.com/careena/SEP-ansible/assets/76873802/6e4dfdf6-76da-4abb-98da-51acb9509035)
 
