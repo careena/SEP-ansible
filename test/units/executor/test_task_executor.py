@@ -455,6 +455,32 @@ class TestTaskExecutor(unittest.TestCase):
             res = te._poll_async_result(result=dict(ansible_job_id=1), templar=mock_templar)
             self.assertEqual(res, dict(finished=1))
 
+    def test_evaluate_conditional_with_result(self):
+        fake_loader = DictDataLoader({})
+
+        mock_host = MagicMock()
+        mock_task = MagicMock()
+        mock_task.evaluate_conditional_with_result.return_value = (True, None)
+        mock_play_context = MagicMock()
+        mock_connection = MagicMock()
+        mock_action = MagicMock()
+        mock_queue = MagicMock()
+        mock_vm = MagicMock()
+        shared_loader = MagicMock()
+        new_stdin = None
+        job_vars = {"var1": "value1"}
+
+        conditional = True
+        te = TaskExecutor(host=mock_host, task=mock_task, job_vars=job_vars, play_context=mock_play_context, new_stdin=new_stdin, loader=fake_loader, shared_loader_obj=shared_loader, final_q=mock_queue, variable_manager=mock_vm)
+        result = te._execute()
+        assert result  
+        
+        conditional = "{{ var1 }} == 'value1'"
+        mock_task.evaluate_conditional_with_result.return_value = (True, None)
+        te = TaskExecutor(host=mock_host, task=mock_task, job_vars=job_vars, play_context=mock_play_context, new_stdin=new_stdin, loader=fake_loader, shared_loader_obj=shared_loader, final_q=mock_queue, variable_manager=mock_vm)
+        result = te._execute()
+        assert result
+    
     def test_recursive_remove_omit(self):
         omit_token = 'POPCORN'
 
