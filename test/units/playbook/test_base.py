@@ -317,6 +317,15 @@ class ExampleParentBaseSubClass(base.Base):
 
     def get_dep_chain(self):
         return self._dep_chain
+    
+    def test_get_dep_chain_when_none(self):
+        obj = ExampleParentBaseSubClass()
+        self.assertIsNone(obj.get_dep_chain())
+
+    def test_get_dep_chain_when_not_none(self):
+        obj = ExampleParentBaseSubClass()
+        obj._dep_chain = [1, 2, 3]
+        self.assertEqual(obj.get_dep_chain(), [1, 2, 3])
 
 
 class ExampleSubClass(base.Base):
