@@ -30,7 +30,8 @@ def evaluate_conditional_with_result(self, templar: Templar, all_vars: dict[str,
 
 [https://github.com/ansible/ansible/pull/83401/files](https://github.com/careena/SEP-ansible/pull/2/files)
 
-![image](https://github.com/careena/SEP-ansible/assets/76873802/89ea6bae-34cf-46e7-9e9f-3682bb5c50bc)
+![image](https://github.com/careena/SEP-ansible/assets/76873802/6a66575d-7154-4bb9-99fb-435d1c29c4af)
+
 
 SEP-ansible/lib/ansible/playbook/block.py:
 def get_dep_chain(self):
